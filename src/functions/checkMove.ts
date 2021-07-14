@@ -1,32 +1,18 @@
 "use strict";
-
-import { Player } from "../class/Player";
-
 const checkMove = (
-  player: Player,
-  move: number,
-  data: number[][],
-  direction: string
+  movedX: number,
+  movedY: number,
+  data: number[][]
 ): boolean => {
-  return true;
-  const x = player.x;
-  const y = player.y;
-  let check: boolean = false;
-  if (direction === "x") {
-    if (data[x + move][y] === 0) {
-      check = true;
-    } else {
-      check = false;
-    }
-  } else if (direction === "y") {
-    if (data[x][y + move] === 0) {
-      check = true;
-    } else {
-      check = false;
-    }
+  let isAbleToMove: boolean = false;
+  // 進む先が壁だったら進まない
+  if (data[movedX][movedY]) {
+    isAbleToMove = true;
+  } else {
+    console.log("ダメだお");
   }
 
-  return check;
+  return isAbleToMove;
 };
 
 export { checkMove };

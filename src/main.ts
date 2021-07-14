@@ -15,7 +15,7 @@ const maze = new Maze(row, col, new MazeRenderer(canvas, blockSize, row, col));
 // 迷路を描画し、迷路自身を取得する
 const data: number[][] = maze.render();
 
-const player = new Player(2, 2, canvas, blockSize, data);
+const player = new Player(1, 1, canvas, blockSize, data);
 
 document.addEventListener("keydown", (e: KeyboardEvent) => {
   const key = e.key;
@@ -37,3 +37,5 @@ document.addEventListener("keydown", (e: KeyboardEvent) => {
       break;
   }
 });
+
+export { maze };
