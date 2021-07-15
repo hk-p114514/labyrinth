@@ -6,10 +6,10 @@ const checkMove = (
 ): boolean => {
   let isAbleToMove: boolean = false;
   // 進む先が壁だったら進まない
-  if (data[movedX][movedY]) {
+  if (!data[movedX][movedY]) {
     isAbleToMove = true;
   } else {
-    console.log("ダメだお");
+    console.log(`ダメだお\n x: ${movedX} y: ${movedY} is wall`);
   }
 
   return isAbleToMove;
