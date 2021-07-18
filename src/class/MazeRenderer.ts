@@ -1,3 +1,4 @@
+import { game } from "../main";
 import { Maze } from "./Maze";
 
 class MazeRenderer {
@@ -18,13 +19,20 @@ class MazeRenderer {
   }
 
   render = (data: number[][]) => {
-    console.log("Render!");
     const wallSize = this.wallSize;
 
     for (let row = 0; row < data.length; row++) {
       for (let col = 0; col < data[row].length; col++) {
-        if (this.ctx && data[row][col] === 1) {
-          this.ctx.fillRect(col * wallSize, row * wallSize, wallSize, wallSize);
+        if (this.ctx) {
+          if (data[row][col] === 1) {
+            this.ctx.fillStyle = "black";
+            this.ctx.fillRect(
+              col * wallSize,
+              row * wallSize,
+              wallSize,
+              wallSize
+            );
+          }
         }
       }
     }

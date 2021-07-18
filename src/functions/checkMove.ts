@@ -1,4 +1,5 @@
 "use strict";
+
 const checkMove = (
   movedX: number,
   movedY: number,
@@ -6,10 +7,15 @@ const checkMove = (
 ): boolean => {
   let isAbleToMove: boolean = false;
   // 進む先が壁だったら進まない
-  if (!data[movedX][movedY]) {
-    isAbleToMove = true;
+  if (
+    movedX <= 0 ||
+    movedY <= 0 ||
+    movedX >= data[0].length - 1 ||
+    movedY >= data.length - 1 ||
+    data[movedY][movedX]
+  ) {
   } else {
-    console.log(`ダメだお\n x: ${movedX} y: ${movedY} is wall`);
+    isAbleToMove = true;
   }
 
   return isAbleToMove;
