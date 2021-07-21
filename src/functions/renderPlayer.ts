@@ -1,7 +1,7 @@
 "use strict";
 
 import { Player } from "../class/Player";
-import { blockSize, ctx, game, goalColor, playerColor } from "../main";
+import { mapData, ctx, game } from "../main";
 import { clearCanvas } from "./clearCanvas";
 
 const renderPlayer = (player: Player, data: number[][]) => {
@@ -12,16 +12,33 @@ const renderPlayer = (player: Player, data: number[][]) => {
         //   contextのnullチェック
         if (data[row][col] === 1) {
           ctx.fillStyle = "black";
-          ctx.fillRect(col * blockSize, row * blockSize, blockSize, blockSize);
+          ctx.fillRect(
+            col * mapData.blockSize,
+            row * mapData.blockSize,
+            mapData.blockSize,
+            mapData.blockSize
+          );
         }
         if (row === player.getX && col === player.getY) {
-          ctx.fillStyle = playerColor;
-          ctx.fillRect(row * blockSize, col * blockSize, blockSize, blockSize);
+          ctx.fillStyle = mapData.playerColor;
+          ctx.fillRect(
+            row * mapData.blockSize,
+            col * mapData.blockSize,
+            mapData.blockSize,
+            mapData.blockSize
+          );
         }
 
-        if (col === game.goalX && row === game.goalY && !game.clear) {
-          ctx.fillStyle = goalColor;
-          ctx.fillRect(col * blockSize, row * blockSize, blockSize, blockSize);
+        const goalX = mapData.col - 2,
+          goalY = mapData.row - 2;
+        if (col === goalX && row === goalY && !game.clear) {
+          ctx.fillStyle = mapData.goalColor;
+          ctx.fillRect(
+            col * mapData.blockSize,
+            row * mapData.blockSize,
+            mapData.blockSize,
+            mapData.blockSize
+          );
         }
       }
     }
