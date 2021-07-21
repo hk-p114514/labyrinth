@@ -4,6 +4,7 @@ import { Maze } from "../class/Maze";
 import { MazeRenderer } from "../class/MazeRenderer";
 import { Player } from "../class/Player";
 import { canvas, game, mapData } from "../main";
+import { checkCanvasHeight } from "./checkCanvasHeight";
 import { clearCanvas } from "./clearCanvas";
 
 const startGame = (player: Player, maze: Maze, data: number[][]) => {
