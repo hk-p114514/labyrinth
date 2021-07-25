@@ -41,7 +41,7 @@ let data: number[][] = maze.render();
 
 let player = new Player(1, 1, data);
 
-alert("ARE YOU READY?");
+// alert("ARE YOU READY?");
 startGame(player, maze, data);
 
 export { canvas, ctx, game, mapData };

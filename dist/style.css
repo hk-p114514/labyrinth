@@ -22,30 +22,33 @@
 
 .rotate-display-flashing {
   animation-name: rotate-display-flashing;
-  animation-duration: 3;
+  animation-duration: 5s;
 }
 
 @keyframes rotate-display-flashing {
   0% {
     transform: rotate(0deg);
-    /* opacity: 0; */
+    opacity: 1;
   }
 
   25% {
     transform: rotate(360deg);
+    opacity: 0;
   }
 
   50% {
     transform: rotate(0deg);
+    opacity: 0;
   }
 
   75% {
     transform: rotate(360deg);
+    opacity: 0;
   }
 
   100% {
     transform: rotate(0deg);
-    /* opacity: 1; */
+    opacity: 1;
   }
 }
 
