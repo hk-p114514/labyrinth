@@ -5,14 +5,14 @@
 
 #canvas {
   margin: 0 auto;
-  /* animation-delay: 5s; */
+  animation-delay: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 .rotate-right {
   animation-name: rotate-slow-right;
-  animation-duration: 5s;
+  animation-duration: 4s;
 }
 
 .rotate-hard {

@@ -2,8 +2,6 @@
 import { Maze } from "./class/Maze";
 import { MazeRenderer } from "./class/MazeRenderer";
 import { Player } from "./class/Player";
-import { clearCanvas } from "./functions/clearCanvas";
-import { renderPlayer } from "./functions/renderPlayer";
 import { startGame } from "./functions/startGame";
 
 // 変数定義
@@ -22,10 +20,11 @@ const mapData = {
   playerColor: "red",
   goalColor: "green",
 };
+
 // - システム変数の定義
 const game = {
+  time: 1,
   clear: false,
-  time: 0,
   goalX: mapData.row - 2,
   goalY: mapData.col - 2,
 };
@@ -41,7 +40,7 @@ let data: number[][] = maze.render();
 
 let player = new Player(1, 1, data);
 
-// alert("ARE YOU READY?");
+alert("ARE YOU READY?");
 startGame(player, maze, data);
 
 export { canvas, ctx, game, mapData };
