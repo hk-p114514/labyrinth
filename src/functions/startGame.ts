@@ -5,10 +5,10 @@ import { MazeRenderer } from "../class/MazeRenderer";
 import { Player } from "../class/Player";
 import { canvas, game, mapData } from "../main";
 import { clearCanvas } from "./clearCanvas";
-import { rewriteTitle } from "./rewriteTitle";
+import { clearStage } from "./clearStage";
 
 const startGame = (player: Player, maze: Maze, data: number[][]) => {
-  rewriteTitle(game.time);
+  canvas.style.animationDuration = `${game.animationDuration}s`;
   document.addEventListener("keydown", (event: KeyboardEvent) => {
     if (!game.clear) {
       player.move(event);
@@ -23,7 +23,7 @@ const startGame = (player: Player, maze: Maze, data: number[][]) => {
         new MazeRenderer(canvas, mapData.blockSize, mapData.row, mapData.col)
       );
       clearCanvas();
-      game.time++;
+      clearStage();
       data = maze.render();
       player = new Player(1, 1, data);
     }

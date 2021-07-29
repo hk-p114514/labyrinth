@@ -1,9 +1,7 @@
 "use strict";
 
 import { rand } from "../functions/rand";
-import { renderPlayer } from "../functions/renderPlayer";
 import { MazeRenderer } from "./MazeRenderer";
-import { Player } from "./Player";
 
 class Maze {
   data: number[][];

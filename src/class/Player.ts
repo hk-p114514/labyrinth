@@ -53,7 +53,7 @@ class Player {
       }
     }
 
-    this.logPlayerPoint(this);
+    // this.logPlayerPoint(this);
     renderPlayer(this, this.data);
     checkClear(this, this.data);
   };

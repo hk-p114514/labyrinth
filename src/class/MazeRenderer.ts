@@ -1,6 +1,3 @@
-import { game } from "../main";
-import { Maze } from "./Maze";
-
 class MazeRenderer {
   ctx: CanvasRenderingContext2D | null;
   wallSize: number;

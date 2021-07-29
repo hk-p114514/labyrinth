@@ -27,6 +27,8 @@ const game = {
   clear: false,
   goalX: mapData.row - 2,
   goalY: mapData.col - 2,
+  animationDuration: 5,
+  durationAdd: 0.5,
 };
 
 let maze = new Maze(

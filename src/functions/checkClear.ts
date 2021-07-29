@@ -10,7 +10,7 @@ const checkClear = (player: Player, data: number[][]) => {
   if (x === data[0].length - 2 && y === data.length - 2) {
     game.clear = true;
   } else {
-    console.log(`clearX : ${data[0].length - 2}, clearY : ${data.length - 2}`);
+    // console.log(`clearX : ${data[0].length - 2}, clearY : ${data.length - 2}`);
   }
 };
 
